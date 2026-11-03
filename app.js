@@ -224,7 +224,7 @@
 
   const CARDS = [];
   const CARD_BY_EL = new Map();
-  const CARD_COUNT = 90;
+  const CARD_COUNT = 60;
   const SAVED = loadSaved();
 
   const state = {
