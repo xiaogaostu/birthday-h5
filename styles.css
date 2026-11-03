@@ -1,3 +1,21 @@
+
+/* ===== Loader (资源加载等待) ===== */
+.loader {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 30%, #1a1330 0%, #070713 70%);
+  color: #fff;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+.loader.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-inner { text-align: center; }
+.loader-star { font-size: 48px; color: #ffb36b; display: block; margin-bottom: 8px;
+  animation: loaderTwinkle 1.4s ease-in-out infinite; }
+@keyframes loaderTwinkle { 0%,100%{transform:scale(1);opacity:.7} 50%{transform:scale(1.25);opacity:1} }
+.loader-title { font-family: var(--font-script); font-size: 56px; margin: 0; color: #fff; }
+.loader-sub { font-size: 14px; letter-spacing: .15em; opacity: .7; margin: 8px 0 24px; }
+.loader-bar { width: 200px; height: 3px; background: rgba(255,255,255,.12); border-radius: 2px; overflow: hidden; margin: 0 auto; }
+.loader-bar span { display: block; height: 100%; width: 0%; background: linear-gradient(90deg,#ff8a3d,#ffb36b); transition: width .2s ease; }
 /* ============================================================
    生日贺卡 · 把星河送给你
    Day scene / card heart / starry cake / letter

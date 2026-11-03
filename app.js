@@ -1536,6 +1536,19 @@
   boot();
 
   /* ----------------------------------------------------------
+     Loader: hide once everything is ready
+     ---------------------------------------------------------- */
+  (function hideLoader() {
+    const loader = document.getElementById('loader');
+    const bar = document.getElementById('loaderBar');
+    if (bar) bar.style.width = '100%';
+    if (loader) {
+      setTimeout(() => loader.classList.add('hide'), 200);
+      setTimeout(() => loader.remove(), 900);
+    }
+  })();
+
+  /* ----------------------------------------------------------
      BGM autoplay: try to start the moment the page opens.
      Browsers may block audio until the first user gesture, so we
      also arm a one-time first-interaction fallback.
